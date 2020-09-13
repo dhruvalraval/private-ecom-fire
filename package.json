@@ -1,0 +1,22 @@
+{
+  "name": "private-ecom-fire",
+  "version": "1.0.0",
+  "description": "Project for a metal company",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvalraval/private-ecom-fire.git"
+  },
+  "author": "Dhruval Raval, Deep Raval, Neel Vadgama, Het Kadia, Rutvik Gaudani",
+  "license": "MIT",
+  "dependencies": {
+    "firbase":"^9.1.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dhruvalraval/private-ecom-fire/issues"
+  },
+  "homepage": "https://github.com/dhruvalraval/private-ecom-fire#readme"
+}
