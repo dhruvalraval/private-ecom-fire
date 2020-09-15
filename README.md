@@ -51,7 +51,7 @@ Register the company under purchase or sales company and you will be redirected 
   - Fullstack Lead Developer
 + [Neel Vadgama](https://www.linkedin.com/in/neel-vadgama-b02449159/)
   - Frontend Developer 
-+ [HEt Kadia](https://github.com/HetK12)
++ [Het Kadia](https://github.com/HetK12)
   - Frontend Developer 
 + [Rutvik Gaudani](https://www.linkedin.com/in/rutvik-gaudani-6b86b71b5/)
   - Frontend Developer
