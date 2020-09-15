@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="../salespurchasebase.css"> 
+        <title>Requirement</title>
+    </head>
+    <style>
+        header{
+        grid-template-columns: 50% 25% 25%;
+    }
+    .section-1-s.hide{
+        display: none;
+    }
+    #size{
+        color: var(--primary);
+        border-radius: 2rem;
+        width: 15rem;
+        font-size: 1.6rem;
+        padding-left: 1rem;
+        margin-left: 2rem;
+        background: #172844;
+        border: 0.8rem solid #172844;   
+    }
+    @media only screen and (max-width: 500px){
+        #size{
+            width: 14rem;
+            font-size: 1.2rem;
+        }
+    }
+    </style>
+    <body>
+        <header>  
+            <div class="logo">
+                <img src="../assets/logo.svg" alt="logo of Upasana"/>
+                <h3>Upasana Metals</h3>
+            </div>
+            <a id="logout" style="cursor: pointer; justify-self: end;">Logout</a>
+            <div class="menu">
+                <div id="one"></div>
+                <div id="two"></div>
+            </div>            
+        </header>
+        <div id="menu">
+            <a class="inactive" href="../index.html">Home</a>
+            <a class="inactive" href="../sales/sales-fetch.html">Latest Quotation</a>
+            <a class="active" >Inquiry</a>
+            <a class="inactive" href="../contact.html">Contact us</a>
+            <a class="inactive" href="../reg2.html">Register</a>
+        </div>          
+            
+        
+        <div class="section-1-s hide">
+            <div class="box-s" style="background-color: var(--primary);">
+                <div class="heading-s">
+                    <h2 class="h2-s">&#x26AC;Sales Company</h2><br>
+                    <h3>Inquiry</h1>
+                </div>
+                <div class="info-s">
+                    <div class="part-1-s">
+                        <label>Metal</label>
+                        <select name="metal" id="metal" placeholder="Select">  
+                            <option> Steel </option>  
+                            <option> Iron </option>
+                            <option> Aluminum </option>
+                            <option> Magnesium </option>
+                            <option> Copper </option>
+                            <option> Brass </option>
+                            <option> Bronze </option>
+                            <option> Zinc </option>
+                            <option> Titanium </option>
+                            <option> Tungsten </option>
+                            <option> Adamantium </option>
+                            <option> Nickel </option>
+                            <option> Cobalt </option>
+                            <option> Lead </option>
+                            <option> Tin </option>
+                            <option> Silicon </option>                                                   
+                          </select>  
+                    </div>   
+                    <div class="part-2-s">
+                        <label>Shape</label>
+                        <select name="shape" id="shape" placeholder="Select">  
+                            <option> Round </option>  
+                            <option> Hexagonal </option>
+                            <option> Sheet </option>  
+                            <option> Octagonal </option>
+                            <option> Square </option>
+                            <option> Channel </option>
+                            <option> Angle </option>
+                            <option> Flatbar </option>
+                            <option> Round tube </option>
+                            <option> Square tube </option>
+                            
+                          </select>  
+                    </div>   
+                    <div class="part-3-s">
+                        <label>Grade</label>
+                        <select name="grade" id="grade" placeholder="Select">  
+                            <option> List item 1 </option>  
+                            <option> List item 2 </option>  
+                            
+                          </select>  
+                    </div>   
+                    <div class="part-4-s">
+                        <label>Sizes</label>
+                        <input type="number" name="size" id="size" placeholder="in mm"/> 
+                    </div>   
+                </div>
+
+            </div>
+            <div class="box-2-s">             
+                <form class="quan-s" method="GET">
+                    <label>Quantity</label>
+                    <input type="number" name="quantity" id="quantity" placeholder="in KG" required/>
+                </form>
+                <form class="usage-s" method="GET">
+                    <label>Usage</label>
+                    <input type="text" name="usage" id="usage" placeholder="purpose" required/>
+                </form>
+            
+            </div>
+            <div class="wishlist-s">
+                <form id="wishlistbutton" method="GET">
+                    <button type="submit" class="wishlist-button-s">Add to wishlist</button>
+                    <div></div>
+                </form>
+            </div> 
+            <footer>
+                <h5>© 2016 Upasana Metals</h5>
+            </footer>
+           
+        </div>
+        <script src = '../src/base.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyCELspb5D7Q6xaFsHh5tCVYlYadd5H9R_0",
+                authDomain: "upasana-metals.firebaseapp.com",
+                databaseURL: "https://upasana-metals.firebaseio.com",
+                projectId: "upasana-metals",
+            };
+            
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            
+            // firebase firestore
+            const auth = firebase.auth();
+            const db = firebase.firestore();    
+            auth.onAuthStateChanged(user => {
+                if(user){
+                    sec.classList.remove('hide');
+                }else{
+                    sec.classList.add('hide');
+            }
+            });       
+            const sec = document.querySelector('.section-1-s');
+
+            
+            const logoutLink = document.querySelector('#logout');
+            
+            logoutLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                auth.signOut();
+                window.location.href = '../index.html';
+            })
+            
+            
+            
+            </script>
+        <script src="../sales/sales.js" defer></script>
+    </body>
+</html>
