@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../base.css">
+<title>Purchase Company(I and Q)</title>
+</head>
+<style>
+    header{
+        grid-template-columns: 50% 25% 25%;
+    }
+    section{
+        background-image: linear-gradient(180deg, var(--primary), var(--primary));
+    }
+</style>
+<body>
+        <header>  
+            <div class="logo">
+                <img src="../assets/logo.svg" alt="logo of Upasana"/>
+                <h3>Upasana Metals</h3>
+            </div>
+            <a id="logout" style="cursor: pointer; justify-self: end;">Logout</a>
+            <div class="menu">
+                <div id="one"></div>
+                <div id="two"></div>
+            </div>            
+        </header>
+        <div id="menu">
+            <a class="inactive" href="../index.html">Home</a>
+            <a class="inactive" href="./purchase.html">Latest Inquiry</a>
+            <a class="active">Quotation</a>
+            <a class="inactive" href="../contact.html">Contact us</a>
+            <a class="inactive" href="../reg2.html">Register</a>
+        </div>  
+        <div class="title">
+            <h1> &CircleDot; Inquiry and Quotation</h1>
+        </div>
+        <section>
+            <form method="GET" id="purchase-form" style="width: 100%;">
+                <div class="inq-box first" style="margin-top: 180px;">
+                    <div class="inq-row">
+                        <h3>Metal</h3>
+                        <input type="text" name="metal" id="metal" value="Forwarded Inquiry Metal" style="border-radius: 50px;" disabled/>
+                    </div>
+                    <div class="inq-row">
+                        <h3>Rate</h3>
+                        <input type="number" name="rate-input" id="rate" placeholder="Rate per kg" required/>
+                    </div>
+                    <div class="inq-row">
+                        <h3>Size</h3>
+                        <input type="number" name="size-input" id="size" placeholder="Available Size in kg" required/>
+                    </div>
+                </div>    
+                <div class="inq-box extra-charges">
+                    <h2>&#x26AC; Extra Charges</h2>
+                    <div class="inq-row">
+                        <h3>Cutting</h3>
+                        <input type="number" name="cutting" id="cutting" placeholder="Enter Amount" />
+                    </div>
+                    <div class="inq-row adding">
+                       <h3>Loading</h3>
+                        <input type="number"class="loading-input" id="loading" name="loading" placeholder="Enter Amount" />
+                    </div>
+                    <div class="inq-row adding">
+                        <h3>Packaging</h3>
+                         <input type="number"class="loading-input" id="packaging" name="loading" placeholder="Enter Amount" />
+                     </div>
+                     <div class="inq-row adding">
+                        <h3>Forwarding</h3>
+                         <input type="number"class="loading-input" id="forwarding" name="loading" placeholder="Enter Amount" />
+                     </div>
+                    
+                </div>
+            </section>
+    
+            <section>
+                <div class="inq-box first-1">
+                    <div class="inq-row">
+                        <h3>Payment terms</h3>
+                        <select id="payment">
+                            <option>Opt 1</option>
+                            <option>Opt 2</option>
+                        </select>
+                    </div>
+                    <div class="inq-row">
+                        <h3>Delivery time</h3>
+                        <select id="delivery">
+                            <option>7-8 business days</option>
+                            <option>15-18 business days</option>
+                        </select>
+                    </div>                
+                </div>
+                <div class="inq-box final">
+                    <h3 class="title">&#x26AC; Final Quotation</h3>
+                    <textarea class="quot-details" id="quote" inq-rows="3" cols="15" placeholder="Enter Quote"></textarea>
+                    <input type="number" name="amount" id="amount" placeholder="Enter Amount in rupees" required/>
+                    <button type="submit" name="submit" class="submit">Submit</button>
+                </div>          
+            </form>  
+        </section>
+        <footer>
+            <h5>© 2016 Upasana Metals</h5>
+        </footer>
+        <script src="../src/base.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyCELspb5D7Q6xaFsHh5tCVYlYadd5H9R_0",
+                authDomain: "upasana-metals.firebaseapp.com",
+                databaseURL: "https://upasana-metals.firebaseio.com",
+                projectId: "upasana-metals",
+            };
+                
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // firebase firestore
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            const section = document.querySelectorAll('section');
+            const logoutLink = document.querySelector('#logout');
+            
+           
+            logoutLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                auth.signOut();
+                window.location.href = '../index.html';
+            });
+            let content;
+            section.forEach(sect => {
+                content += sect.innerHTML;
+            })
+            
+            
+        </script>
+
+        <script src="./purch.js"></script>
+    </body>
+</html>
