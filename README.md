@@ -8,15 +8,18 @@ Purchase Company is the one who produces the large amount of metals and wants to
 
 Sales Company is the one which are the retailers or wholesellers and want to buy the metal via this platform (_**Note**: They cannot directly buy from the purchase company_).
 
-## How to use 
+## How to make your own
 
 Fork this Project and clone it locally.
+
+Make a firebase account and start a project.
 
 Install the firebase package globally or run:
 
 ```
     npm install
 ```
+Now, replace api-keys, authdomain & all from your firebase console, and replace it with the original values. Remember you have to login with your account, else it will show error.
 
 ## Demo
 Check out the live demo hosted on firebase itself
