@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./base.css" charset = "UTF-8">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo of Upasana"/>
+            <h3>Upasana Metals</h3>
+        </div>
+        <div class="menu">
+            <div id="one"></div>
+            <div id="two"></div>
+        </div>
+    </header>
+    <div id="menu">
+        <a class="inactive" href="./index.html">Home</a>
+        <a class="inactive" href="./industries.html">Industries we serve</a>
+        <a class="inactive" href="./about us.html">About us</a>
+        <a class="inactive" href="./contact.html">Contact us</a>
+        <a class="active" href="./reg2.html">Register</a>
+	</div>     
+<section style="min-height: fit-content;">
+	<form style="width: 100%;" id="log-form">
+		<div class="box" style="width: 80%; margin-left:auto; margin-right: auto;">
+			<h1 class="heading">Log in </h1>
+			<div class="row">
+				<i class="fa fa-envelope" aria-hidden="true" style="color: white"></i>
+				<input type="text" placeholder="Enter your email" value="" name="email" />
+			</div>
+			<div class="row">
+				<i class="fa fa-lock" aria-hidden="true" style="color: white"></i>
+				<input type="password" placeholder="Enter your Password" value="" name="password" />
+			</div>
+		</div>
+			
+		<div class="btn">
+			<button type="submit" style="cursor: pointer; padding: 20px 5%;">Login</button>
+			<a href="reg2.html"><h3 style="width: 100%">Create an Account</h3></a>
+		</div>
+	</form>
+		
+		
+	</section>
+
+	<footer>
+        <h5>© 2016 Upasana Metals</h5>
+    </footer>
+<script src = '../src/base.js'></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+
+<script src="./login.js"></script>
+
+</body>
+</html>

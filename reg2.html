@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./base.css" charset = "UTF-8">
+</head>
+<body>
+	<header>
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo of Upasana"/>
+            <h3>Upasana Metals</h3>
+        </div>
+        <div class="menu">
+            <div id="one"></div>
+            <div id="two"></div>
+        </div>
+    </header>
+    <div id="menu">
+		<a class="inactive" href="./index.html">Home</a>
+        <a class="inactive" href="./industries.html">Industries we serve</a>
+        <a class="inactive" href="./about us.html">About us</a>
+        <a class="inactive" href="./contact.html">Contact us</a>
+        <a class="active">Register</a>
+	</div>     
+	<section>
+		<form method="GET" id="signup-form">
+			<div  class="box">
+				<h1 class="heading">Sign Up</h1>
+				<div class="row">
+					<i class="fa fa-envelope" aria-hidden="true" ></i>
+					<input type="text" placeholder="Company email" value="" name="coemail"  required/>
+				</div>
+				<div class="row">
+					<i class="fa fa-envelope" aria-hidden="true"  required></i>
+					<input type="password" placeholder="Enter your Password" value="" name="pass" />
+				</div>
+				<div class="row">
+					<i class="fa fa-lock" aria-hidden="true"  required></i>
+					<input type="password" placeholder="Confirm your Password" value="" name="cpass" />
+				</div>
+				<div class="gender">
+					<h2>Register as</h2>
+					<div class="radio"><input type="radio" value="salesCompany" name="compType" required/><h2>Sales Company</h2></div>
+					<div class="radio"><input type="radio" value="purchaseCompany" name="compType" required/><h2>Purchase Company</h2></div>
+				</div>				
+				<div class="row">
+					<i class="fa fa-user" aria-hidden="true" ></i>
+					<input type="text" placeholder="Company Name" value="" name="coname"  required/>
+				</div>
+				<div class="row">
+					<i class="fa fa-address-card" aria-hidden="true" ></i>
+					<textarea rows="4" placeholder="Company Address" value="" name="coadd" required></textarea>
+				</div>
+	
+				<div class="row">
+					<i class="fa fa-lock" aria-hidden="true" ></i>
+					<input type="text" placeholder="Company No." value="" name="conumber" minlength="10" maxlength="10" required/>
+				</div>
+			</div>	
+			<div class="btn">
+				<button type="submit" style="padding: 20px 40px; cursor: pointer;">Sign Up</button>
+				<h3>Already have an Account?</h3><a href="login.html" id="log"><h4>Login</h4></a>
+			</div>
+		</form>
+		
+	
+	</section>
+
+	<footer>
+        <h5>© 2016 Upasana Metals</h5>
+	</footer>
+<script src = './src/base.js'></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="./reg2.js"></script>
+
+
+</body>
+</html>
