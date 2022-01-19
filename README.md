@@ -47,7 +47,7 @@ Register the company under purchase or sales company and you will be redirected 
 
 + [Dhruval Raval](https://www.linkedin.com/in/dhruval-raval/)
   - Fullstack Lead Developer, 3D modelling
-+ Deep Raval
++ [Deep Raval](https://github.com/deep-18)
   - Fullstack Lead Developer
 + [Neel Vadgama](https://www.linkedin.com/in/neel-vadgama-b02449159/)
   - Frontend Developer 
